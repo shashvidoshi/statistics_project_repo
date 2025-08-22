@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f9; }
+        .container { max-width: 600px; margin: auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; }
+        input, button { width: 100%; padding: 10px; margin: 5px 0; border-radius: 5px; border: 1px solid #ccc; }
+        button { background: #007BFF; color: white; border: none; }
+        button:hover { background: #0056b3; cursor: pointer; }
+        .result { margin-top: 20px; padding: 10px; background: #e9f7ef; border-left: 5px solid #28a745; }
+        .error { margin-top: 20px; padding: 10px; background: #f8d7da; border-left: 5px solid #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Statistics Calculator</h1>
+        <form method="POST">
+            <label>Enter numbers (comma separated):</label>
+            <input type="text" name="numbers" placeholder="e.g. 10, 20, 30, 40" required>
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result %}
+            {% if result.error %}
+                <div class="error"><b>Error:</b> {{ result.error }}</div>
+            {% else %}
+                <div class="result">
+                    <p><b>Mean:</b> {{ result.mean }}</p>
+                    <p><b>Median:</b> {{ result.median }}</p>
+                    <p><b>Mode:</b> {{ result.mode }}</p>
+                    <p><b>Variance:</b> {{ result.variance }}</p>
+                    <p><b>Standard Deviation:</b> {{ result.stdev }}</p>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
