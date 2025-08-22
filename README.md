@@ -12,5 +12,3 @@ This is a simple **Python web app** that calculates basic statistical measures:
 - Simple input form to enter numbers.
 - Real-time calculation of statistical values.
 - Clean HTML/CSS interface.
-
-## 📂 Project Structure
